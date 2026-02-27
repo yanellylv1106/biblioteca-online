@@ -1,97 +1,149 @@
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
 
-.layout {
+.app {
+  background: #f5f5f5;
+  color: black;
+  min-height: 100vh;
+}
+
+.app.dark {
+  background: #141414;
+  color: white;
+}
+
+.navbar {
   display: flex;
-  height: 100vh;
-  width: 100vw;
+  justify-content: space-between;
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero__overlay {
+  padding: 40px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  width: 100%;
+}
+
+.row {
+  padding: 20px 40px;
+}
+
+.row__scroll {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.card {
+  min-width: 180px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
 
 .sidebar {
-  width: 300px;
-  background: #1e293b;
-  color: white;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 280px;
+  height: 100vh;
+  background: #111;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar__title {
-  margin-bottom: 20px;
-}
-
-.sidebar__item {
-  margin-bottom: 15px;
-}
-
-.sidebar__btn {
-  margin-top: 5px;
-  padding: 6px;
-  background: #3b82f6;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.main {
-  flex: 1;
-  padding: 30px;
-  background: #f1f5f9;
   overflow-y: auto;
 }
+/* ================= LOGIN PREMIUM ================= */
 
-.header {
+.login {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+  background-size: cover;
+  background-position: center;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
-.header__search {
-  width: 300px;
-  padding: 8px;
+.login__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.9)
+  );
 }
 
-.filtros {
-  margin-bottom: 20px;
+.login__card {
+  position: relative;
+  z-index: 2;
+  background: rgba(20, 20, 20, 0.9);
+  padding: 50px 40px;
+  border-radius: 12px;
+  width: 350px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
 }
 
-.filtros__dropdown {
-  padding: 8px;
+.login__logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: #e50914;
+  margin-bottom: 10px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+.login__subtitle {
+  color: #ccc;
+  margin-bottom: 30px;
 }
 
-.libro-card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
+.login__form {
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
-.libro-card__img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.libro-card__info {
-  padding: 15px;
-}
-
-.libro-card__btn {
-  margin-top: 10px;
-  padding: 8px;
-  background: #2563eb;
-  color: white;
+.login__input {
+  padding: 12px;
+  border-radius: 6px;
   border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.login__input:focus {
+  box-shadow: 0 0 0 2px #e50914;
+}
+
+.login__button {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background: #e50914;
+  color: white;
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login__button:hover {
+  background: #ff1f1f;
+  transform: translateY(-2px);
 }

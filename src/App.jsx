@@ -1,46 +1,59 @@
-import { useState } from "react";
-import "./App.css";
+import { useState, useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
 import { librosData } from "./data/books";
-import Header from "./components/Header";
-import Filtros from "./components/Filtros";
-import LibroCard from "./components/LibroCard";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import LibroRow from "./components/BookRow";
 import SidebarAlquileres from "./components/SidebarAlquileres";
+import Login from "./components/Login";
+import "./App.css";
 
 function App() {
-  const [busqueda, setBusqueda] = useState("");
-  const [categoria, setCategoria] = useState("");
+  const { user } = useContext(AuthContext);
+  const [darkMode, setDarkMode] = useState(true);
   const [alquileres, setAlquileres] = useState([]);
 
+  if (!user) return <Login />;
+
   const alquilar = (libro) => {
-    if (!alquileres.find((l) => l.id === libro.id)) {
-      setAlquileres([...alquileres, libro]);
-    }
+    const fechaFin = new Date();
+    fechaFin.setDate(fechaFin.getDate() + 14);
+
+    setAlquileres([
+      ...alquileres,
+      { ...libro, fechaFin }
+    ]);
   };
 
   const extender = (id) => {
-    alert("Plazo extendido para libro ID: " + id);
+    setAlquileres(
+      alquileres.map((l) =>
+        l.id === id
+          ? {
+              ...l,
+              fechaFin: new Date(
+                new Date(l.fechaFin).setDate(
+                  new Date(l.fechaFin).getDate() + 7
+                )
+              )
+            }
+          : l
+      )
+    );
   };
 
-  const librosFiltrados = librosData.filter((libro) =>
-    (libro.titulo.toLowerCase().includes(busqueda.toLowerCase()) ||
-      libro.autor.toLowerCase().includes(busqueda.toLowerCase()) ||
-      libro.isbn10.includes(busqueda) ||
-      libro.isbn13.includes(busqueda)) &&
-    (categoria === "" || libro.categoria === categoria)
-  );
-
   return (
-    <div className="layout">
-      <SidebarAlquileres alquileres={alquileres} extender={extender} />
-      <div className="main">
-        <Header busqueda={busqueda} setBusqueda={setBusqueda} />
-        <Filtros categoria={categoria} setCategoria={setCategoria} />
-        <div className="grid">
-          {librosFiltrados.map((libro) => (
-            <LibroCard key={libro.id} libro={libro} alquilar={alquilar} />
-          ))}
-        </div>
+    <div className={darkMode ? "app dark" : "app"}>
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Hero libro={librosData[0]} />
+      <div className="content">
+        <LibroRow
+          titulo="Populares"
+          libros={librosData}
+          alquilar={alquilar}
+        />
       </div>
+      <SidebarAlquileres alquileres={alquileres} extender={extender} />
     </div>
   );
 }
