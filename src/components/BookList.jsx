@@ -1,11 +1,15 @@
-import books from "../data/books";
 import BookCard from "./BookCard";
 
-function BookList() {
+function BookList({ books, alquilar, extender }) {
   return (
-    <div>
+    <div className="book-list">
       {books.map(book => (
-        <BookCard key={book.id} book={book} />
+        <BookCard
+          key={book.id}
+          book={book}
+          alquilar={alquilar}
+          extender={extender}
+        />
       ))}
     </div>
   );

@@ -1,42 +1,97 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar {
+  width: 300px;
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.sidebar__title {
+  margin-bottom: 20px;
 }
 
-.card {
-  padding: 2em;
+.sidebar__item {
+  margin-bottom: 15px;
 }
 
-.read-the-docs {
-  color: #888;
+.sidebar__btn {
+  margin-top: 5px;
+  padding: 6px;
+  background: #3b82f6;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.main {
+  flex: 1;
+  padding: 30px;
+  background: #f1f5f9;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.header__search {
+  width: 300px;
+  padding: 8px;
+}
+
+.filtros {
+  margin-bottom: 20px;
+}
+
+.filtros__dropdown {
+  padding: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.libro-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.libro-card__img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.libro-card__info {
+  padding: 15px;
+}
+
+.libro-card__btn {
+  margin-top: 10px;
+  padding: 8px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
 }

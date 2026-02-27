@@ -1,0 +1,42 @@
+.book-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.book-card__image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.book-card__content {
+  padding: 1rem;
+}
+
+.book-card__title {
+  margin: 0;
+}
+
+.book-card__info {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.book-card__button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.book-card__button--extend {
+  background: #10b981;
+}
+
+.book-card__status {
+  font-weight: bold;
+}

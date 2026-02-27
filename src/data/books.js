@@ -1,28 +1,26 @@
-const books = [
+export const librosData = [
   {
     id: 1,
-    titulo: "Cien años de soledad",
+    titulo: "Cien Años de Soledad",
     autor: "Gabriel García Márquez",
     anio: 1967,
-    isbn: "9780307474728",
+    isbn10: "0307474720",
+    isbn13: "9780307474728",
     categoria: "Novela",
     idioma: "Español",
     descripcion: "Historia de la familia Buendía en Macondo.",
-    portada: "https://covers.openlibrary.org/b/id/8231856-L.jpg",
-    disponible: true
+    imagen: "https://bookscompany.pe/wp-content/uploads/2025/02/9788466379717.jpg"
   },
   {
     id: 2,
-    titulo: "1984",
-    autor: "George Orwell",
-    anio: 1949,
-    isbn: "9780451524935",
-    categoria: "Distopía",
+    titulo: "Clean Code",
+    autor: "Robert C. Martin",
+    anio: 2008,
+    isbn10: "0132350882",
+    isbn13: "9780132350884",
+    categoria: "Tecnología",
     idioma: "Inglés",
-    descripcion: "Una sociedad vigilada por el Gran Hermano.",
-    portada: "https://covers.openlibrary.org/b/id/7222246-L.jpg",
-    disponible: true
+    descripcion: "Manual de buenas prácticas en programación.",
+    imagen: "https://m.media-amazon.com/images/I/41SH-SvWPxL.jpg"
   }
 ];
-
-export default books;
