@@ -19,7 +19,7 @@ const Login = () => {
       <div className="login__overlay"></div>
 
       <div className="login__card">
-        <div className="login__logo">MovieApp</div>
+        <div className="login__logo">Biblioteca Online Lara</div>
         <p className="login__subtitle">Inicia sesión para continuar</p>
 
         <form className="login__form" onSubmit={handleSubmit}>
