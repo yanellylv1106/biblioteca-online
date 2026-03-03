@@ -35,17 +35,20 @@ function App() {
     ...new Set(librosData.map((libro) => libro.categoria))
   ];
 
-  const librosFiltrados = librosData.filter((libro) => {
-    const coincideBusqueda =
-      libro.titulo.toLowerCase().includes(busqueda.toLowerCase()) ||
-      libro.autor.toLowerCase().includes(busqueda.toLowerCase());
+	const librosFiltrados = librosData.filter((libro) => {
+	  const textoBusqueda = busqueda.toLowerCase();
 
-    const coincideCategoria =
-      categoriaActiva === "Todos" ||
-      libro.categoria === categoriaActiva;
+	  const coincideBusqueda =
+		libro.titulo.toLowerCase().includes(textoBusqueda) ||
+		libro.autor.toLowerCase().includes(textoBusqueda) ||
+		libro.idioma.toLowerCase().includes(textoBusqueda);
 
-    return coincideBusqueda && coincideCategoria;
-  });
+	  const coincideCategoria =
+		categoriaActiva === "Todos" ||
+		libro.categoria === categoriaActiva;
+
+	  return coincideBusqueda && coincideCategoria;
+	});
 
   const alquilar = (libro) => {
     if (alquileres.find((l) => l.id === libro.id)) return;
