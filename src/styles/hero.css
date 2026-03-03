@@ -1,0 +1,33 @@
+.hero {
+  height: 75vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  margin-top: 80px;
+}
+
+.hero__overlay {
+  width: 100%;
+  padding: 50px;
+  background: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.85)
+  );
+}
+
+.hero__content {
+  max-width: 600px;
+  color: white;
+}
+
+.hero__content h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.hero__content p {
+  font-size: 16px;
+  opacity: 0.9;
+}

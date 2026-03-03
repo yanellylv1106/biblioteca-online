@@ -1,0 +1,72 @@
+.detalle-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #141414;
+  padding: 20px;
+}
+
+.detalle-card {
+  background: #1f1f1f;
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.detalle-card h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.detalle-card p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.detalle-actions {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.detalle-actions button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #e50914;
+  color: white;
+  transition: 0.3s;
+}
+
+.detalle-actions button:hover {
+  opacity: 0.85;
+}
+
+.detalle-actions button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.detalle-back {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: transparent;
+  border: none;
+  color: #e50914;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.detalle-back:hover {
+  text-decoration: underline;
+}

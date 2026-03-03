@@ -9,7 +9,7 @@ export const librosData = [
     categoria: "Novela",
     idioma: "Español",
     descripcion: "Historia de la familia Buendía en Macondo.",
-    imagen: "https://bookscompany.pe/wp-content/uploads/2025/02/9788466379717.jpg"
+    imagen: "../src/img/cien_anios.jpg"
   },
   {
     id: 2,
@@ -21,6 +21,6 @@ export const librosData = [
     categoria: "Tecnología",
     idioma: "Inglés",
     descripcion: "Manual de buenas prácticas en programación.",
-    imagen: "https://m.media-amazon.com/images/I/41SH-SvWPxL.jpg"
+    imagen: "../src/img/clean_code.jpg"
   }
 ];

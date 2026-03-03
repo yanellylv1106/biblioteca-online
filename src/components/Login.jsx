@@ -1,14 +1,17 @@
 import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import "../styles/login.css";
 
 const Login = () => {
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  const handleLogin = () => {
-    if (name.trim() !== "") {
-      login(name);
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    login(email);
+    navigate("/");
   };
 
   return (
@@ -16,27 +19,23 @@ const Login = () => {
       <div className="login__overlay"></div>
 
       <div className="login__card">
-        <h1 className="login__logo">BiblioFlix</h1>
-        <p className="login__subtitle">
-          Tu biblioteca digital premium
-        </p>
+        <div className="login__logo">MovieApp</div>
+        <p className="login__subtitle">Inicia sesión para continuar</p>
 
-        <div className="login__form">
+        <form className="login__form" onSubmit={handleSubmit}>
           <input
-            className="login__input"
             type="text"
-            placeholder="Ingresa tu nombre"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            className="login__input"
+            placeholder="Ingresa tu nombre o email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
 
-          <button
-            className="login__button"
-            onClick={handleLogin}
-          >
+          <button type="submit" className="login__button">
             Ingresar
           </button>
-        </div>
+        </form>
       </div>
     </div>
   );

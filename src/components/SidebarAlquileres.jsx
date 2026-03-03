@@ -1,3 +1,5 @@
+import "../styles/sideBarAlquileres.css";
+
 const SidebarAlquileres = ({ alquileres, extender }) => {
   const hoy = new Date();
 

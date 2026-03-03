@@ -1,0 +1,29 @@
+.row {
+  margin: 40px 0;
+  padding-left: 40px;
+}
+
+.row__title {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Scroll horizontal tipo Netflix */
+.row__scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+/* Ocultar scrollbar en Chrome */
+.row__scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.row__scroll::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.4);
+  border-radius: 4px;
+}
