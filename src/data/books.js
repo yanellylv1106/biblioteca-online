@@ -1,3 +1,6 @@
+import cienAnios from "../img/cien_anios.jpg";
+import cleanCode from "../img/clean_code.jpg";
+import elPrincipito from "../img/elPrincipito.jpg";
 export const librosData = [
   {
     id: 1,
@@ -9,7 +12,7 @@ export const librosData = [
     categoria: "Novela",
     idioma: "Español",
     descripcion: "Historia de la familia Buendía en Macondo.",
-    imagen: "../src/img/cien_anios.jpg"
+    imagen: cienAnios
   },
   {
     id: 2,
@@ -21,6 +24,18 @@ export const librosData = [
     categoria: "Tecnología",
     idioma: "Inglés",
     descripcion: "Manual de buenas prácticas en programación.",
-    imagen: "../src/img/clean_code.jpg"
+    imagen: cleanCode
+  },
+    {
+    id: 3,
+    titulo: "El Principito",
+    autor: " Antoine de Saint-Exupéry",
+    anio: 1943,
+    isbn10: "0132350992",
+    isbn13: "9780132351204",
+    categoria: "Novela",
+    idioma: "Español",
+    descripcion: "Es un cuento poético y filosófico sobre un pequeño príncipe de otro planeta que viaja y conoce a un piloto perdido en el Sahara.",
+    imagen: elPrincipito
   }
 ];
